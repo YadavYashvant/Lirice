@@ -1,5 +1,6 @@
 package com.yashvant.lirice;
 
+import com.yashvant.lirice.dao.UserDao;
 import com.yashvant.lirice.models.User;
 import org.apache.catalina.core.ApplicationContext;
 import org.springframework.boot.SpringApplication;
@@ -19,6 +20,9 @@ public class LiriceApplication {
         user1.setId(111);
         user1.setUsername("Yashvant");
         user1.setEmail("yashvantyadav855@gmail.com");
+
+        UserDao userDao = context.getBean(UserDao.class);
+        userDao.save(user1);
     }
 
 }
