@@ -1,4 +1,4 @@
 package com.yashvant.lirice.services;
 
-public class userService {
+public class UserService {
 }
