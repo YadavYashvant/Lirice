@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <NextUIProvider>
       <main>
-        
+        <h1>Development in process...</h1>
       </main>
     </NextUIProvider>
   );
