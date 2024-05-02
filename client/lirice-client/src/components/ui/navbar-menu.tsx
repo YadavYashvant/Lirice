@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import myarch from "../../assets/myarch.png"
 
 const transition = {
   type: "spring",
@@ -81,17 +82,16 @@ export const ProductItem = ({
   title,
   description,
   href,
-  src,
+  //src = "",
 }: {
   title: string;
   description: string;
   href: string;
-  src: string;
 }) => {
   return (
     <Link href={href} className="flex space-x-2">
       <Image
-        src={src}
+        src={myarch}
         width={140}
         height={70}
         alt={title}
