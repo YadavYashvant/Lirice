@@ -5,6 +5,10 @@ import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import { Button, Card, NextUIProvider } from "@nextui-org/react";
 import Image from "next/image";
 import Navbar from "@/components/navbar/navbar";
+import CardList from "@/components/Card/CardList";
+
+
+
 export default function Home() {
 
   let mouseX = useMotionValue(0);
@@ -22,10 +26,18 @@ export default function Home() {
     mouseY.set(clientY - top);
   }
 
+  const data = [
+    { title: 'Card 1', description: 'Description for Card 1' },
+    { title: 'Card 2', description: 'Description for Card 2' },
+    { title: 'Card 2', description: 'Description for Card 2' },
+    { title: 'Card 2', description: 'Description for Card 2' },
+    // Add more data as needed
+  ];
+
   return (
     <NextUIProvider>
       <div
-      className="relative h-[100vh] flex items-center bg-white dark:bg-black justify-center w-full group"
+      className="absolute h-[100vh] flex items-center bg-white dark:bg-black justify-center w-full group"
       onMouseMove={handleMouseMove}
     >
         <Navbar/>
@@ -50,7 +62,10 @@ export default function Home() {
             )
           `,
         }}
-      />
+        />
+
+        <CardList data={data} />
+
       </div>
     </NextUIProvider>
   );
