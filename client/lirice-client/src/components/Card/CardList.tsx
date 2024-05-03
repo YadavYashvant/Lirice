@@ -13,7 +13,7 @@ interface CardListProps {
 
 const CardList: React.FC<CardListProps> = ({ data }) => {
     return (
-        <div className="w-full h-64">
+        <div className="w-full h-full">
             {data.map((item, index) => (
                 <Card key={index} title={item.title} description={item.description} />
             ))}
