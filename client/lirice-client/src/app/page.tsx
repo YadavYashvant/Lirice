@@ -6,6 +6,7 @@ import { Button, Card, NextUIProvider } from "@nextui-org/react";
 import Image from "next/image";
 import Navbar from "@/components/navbar/navbar";
 import CardList from "@/components/Card/CardList";
+import { BentoGrid } from "@/components/ui/bento-grid";
 
 
 
@@ -44,7 +45,7 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-800  pointer-events-none" />
 
-        <motion.div
+        {/* <motion.div
         className="pointer-events-none bg-dot-thick-indigo-500 dark:bg-dot-thick-indigo-500   absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
         style={{
           WebkitMaskImage: useMotionTemplate`
@@ -64,7 +65,10 @@ export default function Home() {
         }}
         />
 
-        <CardList data={data} />
+        <BentoGrid/>
+        */}
+
+        <CardList data={data} /> 
 
       </div>
     </NextUIProvider>
