@@ -14,15 +14,17 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class LiriceApplication {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(LiriceApplication.class, args);
+        SpringApplication.run(LiriceApplication.class, args);
+        /*ConfigurableApplicationContext context = SpringApplication.run(LiriceApplication.class, args);
 
         User user1 = context.getBean(User.class);
+
         user1.setId(111);
         user1.setUsername("Yashvant");
         user1.setEmail("yashvantyadav855@gmail.com");
 
         UserDao userDao = context.getBean(UserDao.class);
-        userDao.save(user1);
+        userDao.save(user1);*/
     }
 
 }
