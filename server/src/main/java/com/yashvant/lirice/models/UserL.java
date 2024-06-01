@@ -1,21 +1,25 @@
 package com.yashvant.lirice.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+import lombok.*;
 
-@Component
+/*@Component
 @Scope("prototype")
 @Table
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class User {
+@Builder
+
+ */
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class UserL {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
