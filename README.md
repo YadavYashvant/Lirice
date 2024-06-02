@@ -1,1 +1,2 @@
-A linux ricing platform using springboot and nextjs (UNDER DEVELOPEMENT).
+## (UNDER DEVELOPEMENT)
+A linux ricing platform using springboot and nextjs.
