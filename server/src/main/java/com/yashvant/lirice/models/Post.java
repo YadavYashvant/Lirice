@@ -30,11 +30,11 @@ public class Post {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @ManyToOne
+    /*@ManyToOne
     private UserBlog userBlog;
 
 
     @OneToMany(mappedBy = "post",cascade = CascadeType.ALL)
-    private Set<Comment> comments=new HashSet<>();
+    private Set<Comment> comments=new HashSet<>();*/
 
 }
