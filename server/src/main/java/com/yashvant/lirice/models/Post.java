@@ -1,26 +1,40 @@
 package com.yashvant.lirice.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.Date;
 
 @Entity
-@Data
+@Table(name = "posts")
+@Getter
+@Setter
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class Post {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int Id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer postId;
+
+    @Column(name = "post_title", length = 100, nullable = false)
     private String title;
-    private String body;
-    private String category;
-    private String imageUrl;
-    private String author;
+
+    @Column(length = 1000000000)
+    private String content;
+
+    private String imageName;
+
+    private Date addedDate;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    @ManyToOne
+    private UserBlog userBlog;
+
+
+    @OneToMany(mappedBy = "post",cascade = CascadeType.ALL)
+    private Set<Comment> comments=new HashSet<>();
+
 }
