@@ -26,11 +26,6 @@ public class ImageController {
     @Autowired
     FileStorageService storageService;
 
-    /*@GetMapping("/")
-    public String homepage() {
-        return "redirect:/images";
-    }*/
-
     @GetMapping("/images/new")
     public String newImage(Model model, HttpSession session) {
         return "upload_form";
