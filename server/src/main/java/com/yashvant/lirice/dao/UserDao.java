@@ -1,12 +1,10 @@
 package com.yashvant.lirice.dao;
-
-import com.yashvant.lirice.models.UserL;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
+/*@Repository
 public class UserDao {
 
     public void save(UserL alien){
@@ -17,4 +15,4 @@ public class UserDao {
         return new ArrayList<UserL>();
     }
 
-}
+}*/

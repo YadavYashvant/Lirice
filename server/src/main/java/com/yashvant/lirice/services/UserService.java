@@ -1,17 +1,30 @@
 package com.yashvant.lirice.services;
 
-import com.yashvant.lirice.models.UserL;
+import com.yashvant.lirice.dao.UserRepo;
+import com.yashvant.lirice.entities.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import jakarta.transaction.Transactional;
 
-import java.util.List;
+@Service
+public class UserService {
 
-public interface UserService {
+    @Autowired
+    UserRepo userRepo;
 
-    UserL saveUser(UserL userL);
+    @Transactional
+    public boolean insertUser(User user) {
+        if (!user.isEmpty()) {
+            userRepo.save(user);
+            return true;
+        }
 
-    List<UserL> fetchUserList();
+        return false;
+    }
 
-    UserL updateUser(UserL userL, Long userId);
-
-    void deleteUserById(Long userId);
+    public User getUserByEmail(String email) {
+        User userOptional = userRepo.findByEmail(email);
+        return userOptional;
+    }
 
 }

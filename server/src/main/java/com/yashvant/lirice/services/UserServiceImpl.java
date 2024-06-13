@@ -1,5 +1,6 @@
 package com.yashvant.lirice.services;
 
+/*
 import com.yashvant.lirice.models.UserL;
 import com.yashvant.lirice.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,12 +46,14 @@ public class UserServiceImpl implements UserService{
                     userL.getEmail());
         }
 
-        /*if (Objects.nonNull(department.getDepartmentCode())
+        */
+/*if (Objects.nonNull(department.getDepartmentCode())
                 && !"".equalsIgnoreCase(
                 department.getDepartmentCode())) {
             depDB.setDepartmentCode(
                     department.getDepartmentCode());
-        }*/
+        }*//*
+
 
         return userRepository.save(depDB);
     }
@@ -61,3 +64,4 @@ public class UserServiceImpl implements UserService{
     }
 
 }
+*/

@@ -1,47 +1,35 @@
 package com.yashvant.lirice.controllers;
 
-import com.yashvant.lirice.models.UserL;
-import com.yashvant.lirice.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
-@RestController
+import com.yashvant.lirice.entities.Post;
+import com.yashvant.lirice.entities.User;
+import com.yashvant.lirice.services.PostService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import jakarta.servlet.http.HttpSession;
+
+@Controller
 public class UserController {
-
     @Autowired
-    private UserService userService;
+    PostService postService;
 
-    @PostMapping("/users")
-    public UserL saveUser(
-            @RequestBody UserL userL
-    ){
-        return userService.saveUser(userL);
+    @GetMapping("/profile")
+    public String showUserprofile(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+
+        if (user != null) {
+
+            List<Post> list = postService.findPostsByUserEmail(user.getEmail());
+
+            model.addAttribute("size", list.size());
+            model.addAttribute("list", list);
+            model.addAttribute("user", user);
+            return "user/profile";
+        }
+
+        return "redirect:/login";
     }
-
-    @GetMapping("/users")
-    public List<UserL> fetchUserList(){
-        return userService.fetchUserList();
-    }
-
-    @PutMapping("/users/{id}")
-    public UserL updateUser(
-        @RequestBody UserL userL,
-        @PathVariable("id") Long userId
-    ){
-        return userService.updateUser(
-                userL,
-                userId
-        );
-    }
-
-    @DeleteMapping("/users/{id}")
-    public String deleteUserById(
-            @PathVariable("id") Long userId
-    ){
-        userService.deleteUserById(userId);
-        return "Deleted User Successfully";
-    }
-
 }
