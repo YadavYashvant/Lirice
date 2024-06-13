@@ -1,10 +1,16 @@
 package com.yashvant.lirice;
 
+import com.yashvant.lirice.services.FileStorageService;
+import jakarta.annotation.Resource;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(/*exclude = {DataSourceAutoConfiguration.class}*/)
-public class LiriceApplication {
+public class LiriceApplication implements CommandLineRunner {
+
+    @Resource
+    FileStorageService storageService;
 
     public static void main(String[] args) {
         SpringApplication.run(LiriceApplication.class, args);
@@ -18,6 +24,11 @@ public class LiriceApplication {
 
         UserDao userDao = context.getBean(UserDao.class);
         userDao.save(user1);*/
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        storageService.init();
     }
 
 }
