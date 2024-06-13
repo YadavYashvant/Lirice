@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import com.yashvant.lirice.entities.ImageInfo;
 import com.yashvant.lirice.services.FileStorageService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -31,12 +32,12 @@ public class ImageController {
     }*/
 
     @GetMapping("/images/new")
-    public String newImage(Model model) {
+    public String newImage(Model model, HttpSession session) {
         return "upload_form";
     }
 
     @PostMapping("/images/upload")
-    public String uploadImage(Model model, @RequestParam("file") MultipartFile file) {
+    public String uploadImage(Model model, @RequestParam("file") MultipartFile file, HttpSession session) {
         String message = "";
 
         try {
@@ -53,7 +54,7 @@ public class ImageController {
     }
 
     @GetMapping("/images")
-    public String getListImages(Model model) {
+    public String getListImages(Model model, HttpSession session) {
         List<ImageInfo> imageInfos = storageService.loadAll().map(path -> {
             String filename = path.getFileName().toString();
             String url = MvcUriComponentsBuilder
@@ -68,7 +69,7 @@ public class ImageController {
     }
 
     @GetMapping("/images/{filename:.+}")
-    public ResponseEntity<Resource> getImage(@PathVariable String filename) {
+    public ResponseEntity<Resource> getImage(@PathVariable String filename, Model model) {
         Resource file = storageService.load(filename);
 
         return ResponseEntity.ok()
@@ -76,7 +77,7 @@ public class ImageController {
     }
 
     @GetMapping("/images/delete/{filename:.+}")
-    public String deleteImage(@PathVariable String filename, Model model, RedirectAttributes redirectAttributes) {
+    public String deleteImage(@PathVariable String filename, HttpSession session, Model model, RedirectAttributes redirectAttributes) {
         try {
             boolean existed = storageService.delete(filename);
 
