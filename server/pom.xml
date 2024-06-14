@@ -9,8 +9,8 @@
         <version>3.1.0</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.bezkoder</groupId>
-    <artifactId>spring-boot-security-login</artifactId>
+    <groupId>com.yashvant</groupId>
+    <artifactId>Lirice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-security-login</name>
     <description>Spring Boot Security Login example with JWT and H2 Database</description>
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <scope>runtime</scope>
+            <scope>liricedb</scope>
         </dependency>
 
         <dependency>
