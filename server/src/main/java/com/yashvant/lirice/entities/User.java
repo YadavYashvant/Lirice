@@ -1,79 +1,89 @@
 package com.yashvant.lirice.entities;
 
-import java.util.List;
-
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
-@Table(name = "user_db")
+@Table(name = "users",
+       uniqueConstraints = {
+           @UniqueConstraint(columnNames = "username"),
+           @UniqueConstraint(columnNames = "email")
+       })
 public class User {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @Id
-    @Email(message = "Enter a valid email!")
-    private String email;
-    @Size(min = 3, max = 15, message = "Please Enter Name Of 3-15 Size!")
-    private String nickname;
-    @NotBlank(message = "Provide a password")    
-    private String password;
-    @OneToMany(mappedBy = "user" , cascade = CascadeType.ALL)
-    private List<Post> posts;
+  @NotBlank
+  @Size(max = 20)
+  private String username;
 
-    public boolean isEmpty() {
-        return nickname == null || nickname.isEmpty() ||
-                email == null || email.isEmpty() ||
-                password == null || password.isEmpty();
-    }
+  @NotBlank
+  @Size(max = 50)
+  @Email
+  private String email;
 
-    public String getNickname() {
-        return nickname;
-    }
+  @NotBlank
+  @Size(max = 120)
+  private String password;
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(name = "user_roles", 
+             joinColumns = @JoinColumn(name = "user_id"),
+             inverseJoinColumns = @JoinColumn(name = "role_id"))
+  private Set<Role> roles = new HashSet<>();
 
-    public String getEmail() {
-        return email;
-    }
+  public User() {
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public User(String username, String email, String password) {
+    this.username = username;
+    this.email = email;
+    this.password = password;
+  }
 
-    public String getPassword() {
-        return password;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    @Override
-    public String toString() {
-        return "User [nickname=" + nickname + ", email=" + email + ", password=" + password + "]";
-    }
+  public String getUsername() {
+    return username;
+  }
 
-    public User() {
-    }
+  public void setUsername(String username) {
+    this.username = username;
+  }
 
-    public User(String nickname, String email, String password) {
-        this.nickname = nickname;
-        this.email = email;
-        this.password = password;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public List<Post> getPosts() {
-        return posts;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
-    }
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  public Set<Role> getRoles() {
+    return roles;
+  }
+
+  public void setRoles(Set<Role> roles) {
+    this.roles = roles;
+  }
 }
