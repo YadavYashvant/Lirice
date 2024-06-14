@@ -1,6 +1,6 @@
 package com.yashvant.lirice.security.jwt;
 
-import com.bezkoder.spring.security.login.security.services.UserDetailsImpl;
+import com.yashvant.lirice.security.services.UserDetailsImpl;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;

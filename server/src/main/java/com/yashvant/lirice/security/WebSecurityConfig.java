@@ -1,8 +1,8 @@
 package com.yashvant.lirice.security;
 
-import com.bezkoder.spring.security.login.security.jwt.AuthEntryPointJwt;
-import com.bezkoder.spring.security.login.security.jwt.AuthTokenFilter;
-import com.bezkoder.spring.security.login.security.services.UserDetailsServiceImpl;
+import com.yashvant.lirice.security.jwt.AuthEntryPointJwt;
+import com.yashvant.lirice.security.jwt.AuthTokenFilter;
+import com.yashvant.lirice.security.services.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

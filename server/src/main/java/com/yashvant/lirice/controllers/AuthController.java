@@ -1,11 +1,27 @@
 package com.yashvant.lirice.controllers;
 
 
+import com.yashvant.lirice.entities.ERole;
+import com.yashvant.lirice.entities.Role;
+import com.yashvant.lirice.entities.User;
+import com.yashvant.lirice.payload.request.LoginRequest;
+import com.yashvant.lirice.payload.request.SignupRequest;
+import com.yashvant.lirice.payload.response.MessageResponse;
+import com.yashvant.lirice.payload.response.UserInfoResponse;
+import com.yashvant.lirice.repository.RoleRepository;
+import com.yashvant.lirice.repository.UserRepository;
+import com.yashvant.lirice.security.jwt.JwtUtils;
+import com.yashvant.lirice.security.services.UserDetailsImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashSet;

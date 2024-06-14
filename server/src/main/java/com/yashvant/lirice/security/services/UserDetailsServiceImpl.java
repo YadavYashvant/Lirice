@@ -1,7 +1,7 @@
 package com.yashvant.lirice.security.services;
 
-import com.bezkoder.spring.security.login.models.User;
-import com.bezkoder.spring.security.login.repository.UserRepository;
+import com.yashvant.lirice.entities.User;
+import com.yashvant.lirice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

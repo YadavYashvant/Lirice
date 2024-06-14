@@ -1,6 +1,6 @@
 package com.yashvant.lirice.repository;
 
-import com.bezkoder.spring.security.login.models.User;
+import com.yashvant.lirice.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,6 @@
 package com.yashvant.lirice.security.jwt;
 
-import com.bezkoder.spring.security.login.security.services.UserDetailsServiceImpl;
+import com.yashvant.lirice.security.services.UserDetailsServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

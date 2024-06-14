@@ -1,7 +1,7 @@
 package com.yashvant.lirice.security.services;
 
-import com.bezkoder.spring.security.login.models.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.yashvant.lirice.entities.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
