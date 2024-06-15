@@ -1,4 +1,4 @@
-"use client";
+
 import { cn } from "@/utils/cn";
 import { useState } from "react";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
@@ -7,45 +7,46 @@ import Image from "next/image";
 import Navbar from "@/components/navbar/navbar";
 import CardList from "@/components/Card/CardList";
 import { BentoGrid } from "@/components/ui/bento-grid";
-
+import axios from "axios";
+import LandingPage from "@/pages/landing-page";
 
 
 export default function Home() {
 
-  let mouseX = useMotionValue(0);
-  let mouseY = useMotionValue(0);
+  // let mouseX = useMotionValue(0);
+  // let mouseY = useMotionValue(0);
 
-  function handleMouseMove({
-    currentTarget,
-    clientX,
-    clientY,
-  }: React.MouseEvent<HTMLDivElement>) {
-    if (!currentTarget) return;
-    let { left, top } = currentTarget.getBoundingClientRect();
+  // function handleMouseMove({
+  //   currentTarget,
+  //   clientX,
+  //   clientY,
+  // }: React.MouseEvent<HTMLDivElement>) {
+  //   if (!currentTarget) return;
+  //   let { left, top } = currentTarget.getBoundingClientRect();
 
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
+  //   mouseX.set(clientX - left);
+  //   mouseY.set(clientY - top);
+  // }
 
-  const data = [
-    { title: 'Card 1', description: 'Description for Card 1' },
-    { title: 'Card 2', description: 'Description for Card 2' },
-    { title: 'Card 2', description: 'Description for Card 2' },
-    { title: 'Card 2', description: 'Description for Card 2' },
-    // Add more data as needed
-  ];
+  // const data = [
+  //   { title: 'Card 1', description: 'Description for Card 1' },
+  //   { title: 'Card 2', description: 'Description for Card 2' },
+  //   { title: 'Card 2', description: 'Description for Card 2' },
+  //   { title: 'Card 2', description: 'Description for Card 2' },
+  //   // Add more data as needed
+  // ];
 
   return (
     <NextUIProvider>
-      <div
+      <LandingPage/>
+      {/* <div
       className="absolute h-[100vh] flex items-center bg-white dark:bg-black justify-center w-full group"
       onMouseMove={handleMouseMove}
     >
-        <Navbar/>
 
         <div className="absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-800  pointer-events-none" />
 
-        {/* <motion.div
+        <motion.div
         className="pointer-events-none bg-dot-thick-indigo-500 dark:bg-dot-thick-indigo-500   absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
         style={{
           WebkitMaskImage: useMotionTemplate`
@@ -66,11 +67,10 @@ export default function Home() {
         />
 
         <BentoGrid/>
-        */}
 
         <CardList data={data} /> 
 
-      </div>
+      </div> */}
     </NextUIProvider>
   );
 }
