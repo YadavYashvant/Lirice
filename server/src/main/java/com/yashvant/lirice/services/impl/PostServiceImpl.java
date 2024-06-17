@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.codewithdurgesh.blog.entities.UserBlog;
+import com.yashvant.lirice.entities.UserBlog;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,15 +13,15 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.codewithdurgesh.blog.entities.Category;
-import com.codewithdurgesh.blog.entities.Post;
-import com.codewithdurgesh.blog.exceptions.ResourceNotFoundException;
-import com.codewithdurgesh.blog.payloads.PostDto;
-import com.codewithdurgesh.blog.payloads.PostResponse;
-import com.codewithdurgesh.blog.repositories.CategoryRepo;
-import com.codewithdurgesh.blog.repositories.PostRepo;
-import com.codewithdurgesh.blog.repositories.UserRepo;
-import com.codewithdurgesh.blog.services.PostService;
+import com.yashvant.lirice.entities.Category;
+import com.yashvant.lirice.entities.Post;
+import com.yashvant.lirice.exceptions.ResourceNotFoundException;
+import com.yashvant.lirice.payloads.PostDto;
+import com.yashvant.lirice.payloads.PostResponse;
+import com.yashvant.lirice.repositories.CategoryRepo;
+import com.yashvant.lirice.repositories.PostRepo;
+import com.yashvant.lirice.repositories.UserRepo;
+import com.yashvant.lirice.services.PostService;
 
 @Service
 public class PostServiceImpl implements PostService {

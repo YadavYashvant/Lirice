@@ -1,8 +1,8 @@
 package com.yashvant.lirice.repositories;
 
+import com.yashvant.lirice.entities.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.codewithdurgesh.blog.entities.Category;
 import org.springframework.stereotype.Repository;
 
 @Repository

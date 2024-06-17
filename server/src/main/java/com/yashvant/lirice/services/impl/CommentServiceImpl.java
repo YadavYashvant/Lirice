@@ -4,13 +4,13 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.codewithdurgesh.blog.entities.Comment;
-import com.codewithdurgesh.blog.entities.Post;
-import com.codewithdurgesh.blog.exceptions.ResourceNotFoundException;
-import com.codewithdurgesh.blog.payloads.CommentDto;
-import com.codewithdurgesh.blog.repositories.CommentRepo;
-import com.codewithdurgesh.blog.repositories.PostRepo;
-import com.codewithdurgesh.blog.services.CommentService;
+import com.yashvant.lirice.entities.Comment;
+import com.yashvant.lirice.entities.Post;
+import com.yashvant.lirice.exceptions.ResourceNotFoundException;
+import com.yashvant.lirice.payloads.CommentDto;
+import com.yashvant.lirice.repositories.CommentRepo;
+import com.yashvant.lirice.repositories.PostRepo;
+import com.yashvant.lirice.services.CommentService;
 
 @Service
 public class CommentServiceImpl implements CommentService {

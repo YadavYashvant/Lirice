@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 import jakarta.validation.constraints.Size;
 
-import com.codewithdurgesh.blog.entities.Role;
+import com.yashvant.lirice.entities.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

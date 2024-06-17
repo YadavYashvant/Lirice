@@ -12,7 +12,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.codewithdurgesh.blog.services.FileService;
+import com.yashvant.lirice.services.FileService;
 
 @Service
 public class FileServiceImpl implements FileService {

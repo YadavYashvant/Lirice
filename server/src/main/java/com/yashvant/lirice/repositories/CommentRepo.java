@@ -1,11 +1,11 @@
 package com.yashvant.lirice.repositories;
 
+import com.yashvant.lirice.entities.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.codewithdurgesh.blog.entities.Comment;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CommentRepo  extends JpaRepository<Comment	, Integer> {
+public interface CommentRepo  extends JpaRepository<Comment, Integer> {
 
 }

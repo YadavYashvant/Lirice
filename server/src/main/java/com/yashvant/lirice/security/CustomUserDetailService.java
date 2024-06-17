@@ -1,14 +1,13 @@
 package com.yashvant.lirice.security;
 
+import com.yashvant.lirice.entities.UserBlog;
+import com.yashvant.lirice.exceptions.ResourceNotFoundException;
+import com.yashvant.lirice.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import com.codewithdurgesh.blog.entities.UserBlog;
-import com.codewithdurgesh.blog.exceptions.ResourceNotFoundException;
-import com.codewithdurgesh.blog.repositories.UserRepo;
 
 @Service
 public class CustomUserDetailService implements UserDetailsService {

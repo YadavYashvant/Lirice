@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.codewithdurgesh.blog.payloads.ApiResponse;
-import com.codewithdurgesh.blog.payloads.CategoryDto;
-import com.codewithdurgesh.blog.services.CategoryService;
+import com.yashvant.lirice.payloads.ApiResponse;
+import com.yashvant.lirice.payloads.CategoryDto;
+import com.yashvant.lirice.services.CategoryService;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
