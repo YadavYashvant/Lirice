@@ -2,7 +2,7 @@ package com.yashvant.lirice.services;
 
 import java.util.List;
 
-import com.codewithdurgesh.blog.payloads.CategoryDto;
+import com.yashvant.lirice.payloads.CategoryDto;
 
 public interface CategoryService {
 

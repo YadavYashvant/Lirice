@@ -2,7 +2,7 @@ package com.yashvant.lirice.services;
 
 import java.util.List;
 
-import com.codewithdurgesh.blog.payloads.UserDto;
+import com.yashvant.lirice.payloads.UserDto;
 
 public interface UserService {
 

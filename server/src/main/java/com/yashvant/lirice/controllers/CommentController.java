@@ -5,9 +5,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.codewithdurgesh.blog.payloads.ApiResponse;
-import com.codewithdurgesh.blog.payloads.CommentDto;
-import com.codewithdurgesh.blog.services.CommentService;
+import com.yashvant.lirice.payloads.ApiResponse;
+import com.yashvant.lirice.payloads.CommentDto;
+import com.yashvant.lirice.services.CommentService;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")

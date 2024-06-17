@@ -2,9 +2,9 @@ package com.yashvant.lirice.services;
 
 import java.util.List;
 
-import com.codewithdurgesh.blog.entities.Post;
-import com.codewithdurgesh.blog.payloads.PostDto;
-import com.codewithdurgesh.blog.payloads.PostResponse;
+import com.yashvant.lirice.entities.Post;
+import com.yashvant.lirice.payloads.PostDto;
+import com.yashvant.lirice.payloads.PostResponse;
 
 public interface PostService {
 

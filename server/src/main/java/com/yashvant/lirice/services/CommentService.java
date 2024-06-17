@@ -1,6 +1,6 @@
 package com.yashvant.lirice.services;
 
-import com.codewithdurgesh.blog.payloads.CommentDto;
+import com.yashvant.lirice.payloads.CommentDto;
 
 public interface CommentService {
 

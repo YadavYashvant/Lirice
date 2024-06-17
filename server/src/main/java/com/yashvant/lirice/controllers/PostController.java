@@ -24,13 +24,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.codewithdurgesh.blog.config.AppConstants;
-import com.codewithdurgesh.blog.entities.Post;
-import com.codewithdurgesh.blog.payloads.ApiResponse;
-import com.codewithdurgesh.blog.payloads.PostDto;
-import com.codewithdurgesh.blog.payloads.PostResponse;
-import com.codewithdurgesh.blog.services.FileService;
-import com.codewithdurgesh.blog.services.PostService;
+import com.yashvant.lirice.config.AppConstants;
+import com.yashvant.lirice.entities.Post;
+import com.yashvant.lirice.payloads.ApiResponse;
+import com.yashvant.lirice.payloads.PostDto;
+import com.yashvant.lirice.payloads.PostResponse;
+import com.yashvant.lirice.services.FileService;
+import com.yashvant.lirice.services.PostService;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")

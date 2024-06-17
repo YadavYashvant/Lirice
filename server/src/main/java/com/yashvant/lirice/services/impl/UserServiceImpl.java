@@ -8,12 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.codewithdurgesh.blog.exceptions.*;
-import com.codewithdurgesh.blog.payloads.UserDto;
-import com.codewithdurgesh.blog.services.UserService;
-import com.codewithdurgesh.blog.repositories.*;
-import com.codewithdurgesh.blog.config.AppConstants;
-import com.codewithdurgesh.blog.entities.*;
+import com.yashvant.lirice.exceptions.*;
+import com.yashvant.lirice.payloads.UserDto;
+import com.yashvant.lirice.services.UserService;
+import com.yashvant.lirice.repositories.*;
+import com.yashvant.lirice.config.AppConstants;
+import com.yashvant.lirice.entities.*;
 
 @Service
 public class UserServiceImpl implements UserService {

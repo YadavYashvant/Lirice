@@ -24,9 +24,9 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import com.codewithdurgesh.blog.security.CustomUserDetailService;
-import com.codewithdurgesh.blog.security.JwtAuthenticationEntryPoint;
-import com.codewithdurgesh.blog.security.JwtAuthenticationFilter;
+import com.yashvant.lirice.security.CustomUserDetailService;
+import com.yashvant.lirice.security.JwtAuthenticationEntryPoint;
+import com.yashvant.lirice.security.JwtAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
