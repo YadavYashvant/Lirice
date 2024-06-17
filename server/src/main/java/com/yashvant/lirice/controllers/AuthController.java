@@ -66,7 +66,6 @@ public class AuthController {
 
 	}
 
-	// register new user api
 
 	@PostMapping("/register")
 	public ResponseEntity<UserDto> registerUser(@Valid @RequestBody UserDto userDto) {
@@ -74,7 +73,6 @@ public class AuthController {
 		return new ResponseEntity<UserDto>(registeredUser, HttpStatus.CREATED);
 	}
 
-	// get loggedin user data
 	@Autowired
 	private UserRepo userRepo;
 	@Autowired

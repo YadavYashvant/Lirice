@@ -30,14 +30,12 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	// POST-create user
 	@PostMapping("/")
 	public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto) {
 		UserDto createUserDto = this.userService.createUser(userDto);
 		return new ResponseEntity<>(createUserDto, HttpStatus.CREATED);
 	}
 
-	// PUT- update user
 
 	@PutMapping("/{userId}")
 	public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto, @PathVariable("userId") Integer uid) {
@@ -45,8 +43,6 @@ public class UserController {
 		return ResponseEntity.ok(updatedUser);
 	}
 
-	//ADMIN
-	// DELETE -delete user
 	@PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("/{userId}")
 	public ResponseEntity<ApiResponse> deleteUser(@PathVariable("userId") Integer uid) {
@@ -54,13 +50,11 @@ public class UserController {
 		return new ResponseEntity<ApiResponse>(new ApiResponse("User deleted Successfully", true), HttpStatus.OK);
 	}
 
-	// GET - user get
 	@GetMapping("/")
 	public ResponseEntity<List<UserDto>> getAllUsers() {
 		return ResponseEntity.ok(this.userService.getAllUsers());
 	}
 
-	// GET - user get
 	@GetMapping("/{userId}")
 	public ResponseEntity<UserDto> getSingleUser(@PathVariable Integer userId) {
 		return ResponseEntity.ok(this.userService.getUserById(userId));
