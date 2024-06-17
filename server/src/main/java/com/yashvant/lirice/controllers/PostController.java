@@ -33,7 +33,6 @@ import com.yashvant.lirice.services.FileService;
 import com.yashvant.lirice.services.PostService;
 
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/api/v1/")
 public class PostController {
 

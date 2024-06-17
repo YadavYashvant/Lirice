@@ -10,7 +10,6 @@ import com.yashvant.lirice.payloads.CommentDto;
 import com.yashvant.lirice.services.CommentService;
 
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/api/v1/")
 public class CommentController {
 

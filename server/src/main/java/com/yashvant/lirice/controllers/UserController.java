@@ -24,7 +24,6 @@ import com.yashvant.lirice.payloads.UserDto;
 import com.yashvant.lirice.services.UserService;
 
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/api/v1/users")
 public class UserController {
 

@@ -22,7 +22,6 @@ import com.yashvant.lirice.payloads.CategoryDto;
 import com.yashvant.lirice.services.CategoryService;
 
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/api/v1/categories")
 public class CategoryController {
 
