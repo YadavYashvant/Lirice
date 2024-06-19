@@ -23,6 +23,7 @@ import com.yashvant.lirice.services.CategoryService;
 
 @RestController
 @RequestMapping("/api/v1/categories")
+@CrossOrigin("*")
 public class CategoryController {
 
 	@Autowired

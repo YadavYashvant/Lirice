@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PostRepo extends JpaRepository<Post, Integer> {
 
-	List<Post> findByUser(UserBlog userBlog);
+//	List<Post> findByUser(UserBlog userBlog);
 	List<Post> findByCategory(Category category);
 	
 	@Query("select p from Post p where p.title like :key")

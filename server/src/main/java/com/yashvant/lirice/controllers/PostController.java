@@ -34,6 +34,7 @@ import com.yashvant.lirice.services.PostService;
 
 @RestController
 @RequestMapping("/api/v1/")
+@CrossOrigin("*")
 public class PostController {
 
 	@Autowired
@@ -46,22 +47,21 @@ public class PostController {
 	private String path;
 //	create
 
-	@PostMapping("/user/{userId}/category/{categoryId}/posts")
-	public ResponseEntity<PostDto> createPost(@RequestBody PostDto postDto, @PathVariable Integer userId,
-			@PathVariable Integer categoryId) {
-		PostDto createPost = this.postService.createPost(postDto, userId, categoryId);
+	@PostMapping("/category/posts")
+	public ResponseEntity<PostDto> createPost(@RequestBody PostDto postDto) {
+		PostDto createPost = this.postService.createPost(postDto);
 		return new ResponseEntity<PostDto>(createPost, HttpStatus.CREATED);
 	}
 
 	// get by user
 
-	@GetMapping("/user/{userId}/posts")
+	/*@GetMapping("/user/{userId}/posts")
 	public ResponseEntity<List<PostDto>> getPostsByUser(@PathVariable Integer userId) {
 
 		List<PostDto> posts = this.postService.getPostsByUser(userId);
 		return new ResponseEntity<List<PostDto>>(posts, HttpStatus.OK);
 
-	}
+	}*/
 
 	// get by category
 

@@ -11,6 +11,7 @@ import com.yashvant.lirice.services.CommentService;
 
 @RestController
 @RequestMapping("/api/v1/")
+@CrossOrigin("*")
 public class CommentController {
 
 	@Autowired

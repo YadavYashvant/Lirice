@@ -34,8 +34,8 @@ public class Post {
 	@JoinColumn(name = "category_id")
 	private Category category;
 
-	@ManyToOne
-	private UserBlog user;
+	/*@ManyToOne
+	private UserBlog user;*/
 //	private UserBlog userBlog;
 	
 	

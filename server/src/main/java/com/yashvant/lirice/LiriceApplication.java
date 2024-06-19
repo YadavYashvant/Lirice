@@ -43,8 +43,10 @@ public class LiriceApplication implements CommandLineRunner {
         user.setEmail("yashvantyadav855@gmail.com");
         user.setPassword("xyz");
         user.setAbout("I am a software developer");
-        user.setPosts(null);
+//        user.setPosts(null);
         user.setId(1);
+        this.userRepo.saveAll(List.of(user));
+
     }
 
     /*@Override

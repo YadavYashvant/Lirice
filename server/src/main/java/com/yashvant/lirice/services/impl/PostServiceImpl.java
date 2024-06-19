@@ -39,19 +39,20 @@ public class PostServiceImpl implements PostService {
     private CategoryRepo categoryRepo;
 
     @Override
-    public PostDto createPost(PostDto postDto, Integer userId, Integer categoryId) {
+    public PostDto createPost(PostDto postDto/*, Integer categoryId*/) {
 
-        UserBlog userBlog = this.userRepo.getOne(userId);
+//        UserBlog userBlog = this.userRepo.getOne(userId);
 //                .orElseThrow(() -> new ResourceNotFoundException("User ", "User id", userId));
 
-        Category category = this.categoryRepo.getOne(categoryId);
+//        Category category = this.categoryRepo.getOne(categoryId);
 //                .orElseThrow(() -> new ResourceNotFoundException("Category", "category id ", categoryId));
 
         Post post = this.modelMapper.map(postDto, Post.class);
         post.setImageName("default.png");
         post.setAddedDate(new Date());
-        post.setUser(userBlog);
-        post.setCategory(category);
+//        post.setUser(userRepo.getOne(1));
+//        post.setUser(userBlog);
+        post.setCategory(null);
 
         Post newPost = this.postRepo.save(post);
 
@@ -133,7 +134,7 @@ public class PostServiceImpl implements PostService {
         return postDtos;
     }
 
-    @Override
+    /*@Override
     public List<PostDto> getPostsByUser(Integer userId) {
 
         UserBlog userBlog = this.userRepo.findById(userId)
@@ -144,7 +145,7 @@ public class PostServiceImpl implements PostService {
                 .collect(Collectors.toList());
 
         return postDtos;
-    }
+    }*/
 
     @Override
     public List<PostDto> searchPosts(String keyword) {

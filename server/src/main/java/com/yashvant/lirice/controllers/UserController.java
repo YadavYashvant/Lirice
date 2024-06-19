@@ -24,6 +24,7 @@ import com.yashvant.lirice.services.UserService;
 
 @RestController
 @RequestMapping("/api/v1/users")
+@CrossOrigin("*")
 public class UserController {
 
 	@Autowired

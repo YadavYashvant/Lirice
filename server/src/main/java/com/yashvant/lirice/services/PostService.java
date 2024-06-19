@@ -10,7 +10,7 @@ public interface PostService {
 
 	//create 
 
-	PostDto createPost(PostDto postDto,Integer userId,Integer categoryId);
+	PostDto createPost(PostDto postDto/*,Integer categoryId*/);
 
 	//update 
 
@@ -33,7 +33,7 @@ public interface PostService {
 	List<PostDto> getPostsByCategory(Integer categoryId);
 	
 	//get all posts by user
-	List<PostDto> getPostsByUser(Integer userId);
+//	List<PostDto> getPostsByUser(Integer userId);
 	
 	//search posts
 	List<PostDto> searchPosts(String keyword);
