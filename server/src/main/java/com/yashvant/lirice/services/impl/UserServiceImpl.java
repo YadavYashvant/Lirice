@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.yashvant.lirice.exceptions.*;
@@ -24,8 +23,8 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private ModelMapper modelMapper;
 
-	@Autowired
-	private PasswordEncoder passwordEncoder;
+	/*@Autowired
+	private PasswordEncoder passwordEncoder;*/
 
 	@Autowired
 	private RoleRepo roleRepo;
@@ -101,12 +100,12 @@ public class UserServiceImpl implements UserService {
 		UserBlog userBlog = this.modelMapper.map(userDto, UserBlog.class);
 
 		// encoded the password
-		userBlog.setPassword(this.passwordEncoder.encode(userBlog.getPassword()));
+		userBlog.setPassword(userBlog.getPassword());
 
 		// roles
 		Role role = this.roleRepo.findById(AppConstants.NORMAL_USER).get();
 
-		userBlog.getRoles().add(role);
+//		userBlog.getRoles().add(role);
 
 		UserBlog newUserBlog = this.userRepo.save(userBlog);
 
