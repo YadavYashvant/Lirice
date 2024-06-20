@@ -65,12 +65,12 @@ public class PostServiceImpl implements PostService {
         Post post = this.postRepo.getOne(postId);
 //                .orElseThrow(() -> new ResourceNotFoundException("Post ", "post id", postId));
 
-        Category category = this.categoryRepo.getOne(postDto.getCategory().getCategoryId());
+//        Category category = this.categoryRepo.getOne(postDto.getCategory().getCategoryId());
 
         post.setTitle(postDto.getTitle());
         post.setContent(postDto.getContent());
         post.setImageName(postDto.getImageName());
-        post.setCategory(category);
+        post.setCategory(null);
 
 
         Post updatedPost = this.postRepo.save(post);
