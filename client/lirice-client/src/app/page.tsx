@@ -36,11 +36,9 @@ export default function Home() {
 
   return (
     <NextUIProvider>
-      <LandingPage/>
-      {/* <div
+      <div
       className="absolute h-[100vh] flex items-center bg-white dark:bg-black justify-center w-full group"
-      onMouseMove={handleMouseMove}
-    >
+      onMouseMove={handleMouseMove} >
 
         <div className="absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-800  pointer-events-none" />
 
@@ -68,7 +66,7 @@ export default function Home() {
 
         <CardList data={data} /> 
 
-      </div> */}
+      </div>
     </NextUIProvider>
   );
 }
