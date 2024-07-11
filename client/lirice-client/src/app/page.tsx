@@ -8,8 +8,6 @@ import Navbar from "@/components/navbar/navbar";
 import CardList from "@/components/Card/CardList";
 import { BentoGrid } from "@/components/ui/bento-grid";
 import axios from "axios";
-import LandingPage from "@/pages/landing-page";
-
 
 export default function Home() {
 
