@@ -1,4 +1,4 @@
-
+'use client';
 import { cn } from "@/utils/cn";
 import { useState } from "react";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
