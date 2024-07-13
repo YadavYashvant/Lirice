@@ -11,28 +11,28 @@ import axios from "axios";
 
 export default function Home() {
 
-  // let mouseX = useMotionValue(0);
-  // let mouseY = useMotionValue(0);
+  let mouseX = useMotionValue(0);
+  let mouseY = useMotionValue(0);
 
-  // function handleMouseMove({
-  //   currentTarget,
-  //   clientX,
-  //   clientY,
-  // }: React.MouseEvent<HTMLDivElement>) {
-  //   if (!currentTarget) return;
-  //   let { left, top } = currentTarget.getBoundingClientRect();
+  function handleMouseMove({
+    currentTarget,
+    clientX,
+    clientY,
+  }: React.MouseEvent<HTMLDivElement>) {
+    if (!currentTarget) return;
+    let { left, top } = currentTarget.getBoundingClientRect();
 
-  //   mouseX.set(clientX - left);
-  //   mouseY.set(clientY - top);
-  // }
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
 
-  // const data = [
-  //   { title: 'Card 1', description: 'Description for Card 1' },
-  //   { title: 'Card 2', description: 'Description for Card 2' },
-  //   { title: 'Card 2', description: 'Description for Card 2' },
-  //   { title: 'Card 2', description: 'Description for Card 2' },
-  //   // Add more data as needed
-  // ];
+  const data = [
+    { title: 'Card 1', description: 'Description for Card 1' },
+    { title: 'Card 2', description: 'Description for Card 2' },
+    { title: 'Card 2', description: 'Description for Card 2' },
+    { title: 'Card 2', description: 'Description for Card 2' },
+    // Add more data as needed
+  ];
 
   return (
     <NextUIProvider>
