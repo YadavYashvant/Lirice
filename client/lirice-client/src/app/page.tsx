@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <NextUIProvider>
       <div
-      className="absolute h-[100vh] flex items-center bg-white dark:bg-black justify-center w-full group"
+      className="absolute h-[500vh] flex items-center bg-white dark:bg-black justify-center w-full group"
       onMouseMove={handleMouseMove} >
 
         <div className="absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-800  pointer-events-none" />

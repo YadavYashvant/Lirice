@@ -17,7 +17,7 @@ const PostCard: React.FC<CardProps> = ({ title, description }) => {
             <CardBody className="overflow-visible py-2">
                 <Image
                     alt="Card background"
-                    className="object-cover rounded-xl"
+                    className="rounded-xl object-fit"
                     src="/myarch.png"
                     width={270}
                 />
@@ -25,7 +25,7 @@ const PostCard: React.FC<CardProps> = ({ title, description }) => {
                 <Image
                     alt="Card background"
                     className="object-cover rounded-xl"
-                    src="/myarch.png"
+                    src="/agshypr.png"
                     width={270}
                 />
 
