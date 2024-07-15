@@ -15,19 +15,21 @@ const PostCard: React.FC<CardProps> = ({ title, description }) => {
                 <h4 className="font-bold text-large">Hyprland, AGS, KDE, StarShip and more . . . </h4>
             </CardHeader>
             <CardBody className="overflow-visible py-2">
-                <Image
-                    alt="Card background"
-                    className="rounded-xl object-fit"
-                    src="/myarch.png"
-                    width={270}
-                />
+            <Image
+      isBlurred
+      width={500}
+      src="/myarch.png"
+      alt="POST image 1"
+      className="m-5"
+    />
 
-                <Image
-                    alt="Card background"
-                    className="object-cover rounded-xl"
-                    src="/agshypr.png"
-                    width={270}
-                />
+<Image
+      isBlurred
+      width={500}
+      src="/agshypr.png"
+      alt="POST image 2"
+      className="m-5"
+    />
 
             </CardBody>
         </Card>
