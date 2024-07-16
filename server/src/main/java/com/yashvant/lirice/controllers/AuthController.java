@@ -8,7 +8,6 @@ import com.yashvant.lirice.payloads.JwtAuthRequest;
 import com.yashvant.lirice.payloads.JwtAuthResponse;
 import com.yashvant.lirice.payloads.UserDto;
 import com.yashvant.lirice.repositories.UserRepo;
-import com.yashvant.lirice.security.JwtTokenHelper;
 import com.yashvant.lirice.services.UserService;
 import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;
