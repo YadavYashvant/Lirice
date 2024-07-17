@@ -5,10 +5,7 @@ import com.yashvant.springseclirice.entities.Post;
 import com.yashvant.springseclirice.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,7 +31,7 @@ public class PostController {
     }
 
     @PostMapping("/post")
-    public String createPost(Post post) {
+    public String createPost(@RequestBody Post post) {
         postService.createPost(post);
         return "created posts successfully";
     }
