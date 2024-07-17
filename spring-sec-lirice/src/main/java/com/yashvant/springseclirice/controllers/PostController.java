@@ -6,6 +6,7 @@ import com.yashvant.springseclirice.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,6 +31,12 @@ public class PostController {
     @GetMapping("/post/{id}")
     public Post getPostById(Long id) {
         return postService.getPostById(id);
+    }
+
+    @PostMapping("/post")
+    public String createPost(Post post) {
+        postService.createPost(post);
+        return "redirect:/posts";
     }
 
 }
