@@ -36,7 +36,7 @@ public class PostController {
     @PostMapping("/post")
     public String createPost(Post post) {
         postService.createPost(post);
-        return "redirect:/posts";
+        return "created posts successfully";
     }
 
 }
