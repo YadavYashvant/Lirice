@@ -1,5 +1,5 @@
 import { Card, CardBody, CardHeader, Image } from "@nextui-org/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface CardProps {
     title: string;
@@ -7,6 +7,15 @@ interface CardProps {
 }
 
 const PostCard: React.FC<CardProps> = ({ title, description }) => {
+    const [data, setData] = useState<any>(null);
+
+    useEffect(() => {
+        fetch("http://localhost:8080/posts")
+            .then(response => response.json())
+            .then(data => setData(data))
+            .catch(error => console.error("Error fetching data:", error));
+    }, []);
+
     return (
         <Card className="py-4 my-10 mx-10 lg:mx-42 lg:my-32">
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
@@ -15,22 +24,19 @@ const PostCard: React.FC<CardProps> = ({ title, description }) => {
                 <h4 className="font-bold text-large">Hyprland, AGS, KDE, StarShip and more . . . </h4>
             </CardHeader>
             <CardBody className="overflow-visible py-2 w-full">
-              <Image
-              isBlurred
-              // width={500}
-              src="/myarch.png"
-              alt="POST image 1"
-              className="m-5 w-[50%]"
-              />
-
-              <Image
-              isBlurred
-              // width={500}
-              src="/agshypr.png"
-              alt="POST image 2"
-              className="m-5 w-[50%]"
-              />
-
+                <Image
+                    isBlurred
+                    // width={500}
+                    src="/myarch.png"
+                    alt="POST image 1"
+                    className="m-5 w-[50%]"
+                />
+                {data && (
+                    <div>
+                        <h5>API Response:</h5>
+                        <pre>{JSON.stringify(data, null, 2)}</pre>
+                    </div>
+                )}
             </CardBody>
         </Card>
     );

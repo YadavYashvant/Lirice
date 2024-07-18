@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+//@Controller
+@RestController
+@CrossOrigin("*")
 public class PostController {
 
     @Autowired
@@ -26,7 +28,7 @@ public class PostController {
     }
 
     @GetMapping("/post/{id}")
-    public Post getPostById(Long id) {
+    public Post getPostById(@PathVariable Long id) {
         return postService.getPostById(id);
     }
 
