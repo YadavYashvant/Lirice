@@ -2,9 +2,12 @@
 import { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/navbar/navbar-menu";
 import { cn } from "@/utils/cn";
+import { Button } from "@nextui-org/react";
+import { useRouter } from 'next/navigation'
 
 export default function Navbar({ className }: { className?: string }) {
     const [active, setActive] = useState<string | null>(null);
+    const router = useRouter()
     return (
       <div
         className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
@@ -18,7 +21,7 @@ export default function Navbar({ className }: { className?: string }) {
               <HoveredLink href="/branding">Branding</HoveredLink>
             </div>
           </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="📋 Leaderboard">
+          <MenuItem setActive={setActive} active={active} item=" 📋 Leaderboard">
             <div className="  text-sm grid grid-cols-2 gap-10 p-4">
               <ProductItem
                 title="Algochurn"
@@ -42,7 +45,7 @@ export default function Navbar({ className }: { className?: string }) {
               />
             </div>
           </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="📚 Library">
+          <MenuItem setActive={setActive} active={active} item=" 📚 Library">
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/hobby">Hobby</HoveredLink>
               <HoveredLink href="/individual">Individual</HoveredLink>
@@ -50,6 +53,10 @@ export default function Navbar({ className }: { className?: string }) {
               <HoveredLink href="/enterprise">Enterprise</HoveredLink>
             </div>
           </MenuItem>
+
+          <Button color="success" onClick={() => router.push('/newpost')}>
+      Button
+    </Button>
         </Menu>
       </div>
     );
