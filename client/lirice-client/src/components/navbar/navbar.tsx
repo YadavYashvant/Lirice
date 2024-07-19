@@ -54,9 +54,14 @@ export default function Navbar({ className }: { className?: string }) {
             </div>
           </MenuItem>
 
-          <Button color="success" onClick={() => router.push('/newpost')}>
-      Button
-    </Button>
+          <MenuItem setActive={setActive} active={active} item="✏️ Create">
+          <div>
+          <Button variant="bordered" color="secondary" onClick={() => router.push('/newpost')}>
+            Create New Post
+          </Button>
+          </div>
+          </MenuItem>
+
         </Menu>
       </div>
     );
