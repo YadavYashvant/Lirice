@@ -2,6 +2,7 @@ package com.yashvant.springseclirice.controllers;
 
 
 import com.yashvant.springseclirice.entities.Post;
+import com.yashvant.springseclirice.services.FileService;
 import com.yashvant.springseclirice.services.PostService;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,10 +55,10 @@ public class PostController {
     }
 
     @PostMapping("/post/image/upload/{postId}")
-    public ResponseEntity<PostDto> uploadPostImage(@RequestParam("image") MultipartFile image,
-                                                   @PathVariable Integer postId) throws IOException {
+    public ResponseEntity<Post> uploadPostImage(@RequestParam("image") MultipartFile image,
+                                                   @PathVariable Long postId) throws IOException {
 
-        PostDto postDto = this.postService.getPostById(postId);
+        Post postDto = this.postService.getPostById(postId);
 
         String fileName = this.fileService.uploadImage(path, image);
         postDto.setImageName(fileName);
