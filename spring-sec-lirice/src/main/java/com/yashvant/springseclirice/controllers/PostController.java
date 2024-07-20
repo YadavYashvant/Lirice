@@ -49,9 +49,9 @@ public class PostController {
     }
 
     @PostMapping("/post")
-    public String createPost(@RequestBody Post post) {
-        postService.createPost(post);
-        return "created posts successfully";
+    public ResponseEntity<Post> createPost(@RequestBody Post post) {
+        Post createdPost = postService.createPost(post);
+        return new ResponseEntity<>(createdPost, HttpStatus.CREATED);
     }
 
     @PostMapping("/post/image/upload/{postId}")

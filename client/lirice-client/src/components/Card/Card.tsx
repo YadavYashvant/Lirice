@@ -4,9 +4,10 @@ import React, { useEffect, useState } from "react";
 interface CardProps {
     title: string;
     description: string;
+    image?: string;
 }
 
-const PostCard: React.FC<CardProps> = ({ title, description }) => {
+const PostCard: React.FC<CardProps> = ({ title, description, image }) => {
     // const [data, setData] = useState<any>(null);
 
     // useEffect(() => {
@@ -27,8 +28,9 @@ const PostCard: React.FC<CardProps> = ({ title, description }) => {
                 <Image
                     isBlurred
                     // width={500}
-                    src="/myarch.png"
-                    alt="POST image 1"
+                    src={`/home/mobotronst/IdeaProjects/Lirice/server/images/${image}`}
+                    // src="/myarch.png"
+                    alt={`${title}`}
                     className="m-5 w-[50%]"
                 />
                 {/* {data && (

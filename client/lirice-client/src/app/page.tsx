@@ -1,3 +1,4 @@
+
 'use client';
 import { cn } from "@/utils/cn";
 import { useState } from "react";
@@ -36,6 +37,7 @@ export default function Home() {
         const formattedData = data.map((item: any) => ({
           title: item.title,
           description: item.content,
+          image: item.imageName,
         }));
         setData(formattedData);
       })
@@ -79,3 +81,4 @@ export default function Home() {
     </NextUIProvider>
   );
 }
+

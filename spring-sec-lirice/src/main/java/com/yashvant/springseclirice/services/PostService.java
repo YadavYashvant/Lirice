@@ -25,8 +25,8 @@ public class PostService {
         return postRepo.findById(id).orElse(null);
     }
 
-    public void createPost(Post post) {
-        postRepo.save(post);
+    public Post createPost(Post post) {
+        return postRepo.save(post);
     }
 
     public Post updatePost(Post postDto, Long id){
