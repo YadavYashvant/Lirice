@@ -24,4 +24,6 @@ public class Post {
 
     private String content;
 
+    private String imageName;
+
 }

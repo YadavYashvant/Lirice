@@ -29,4 +29,15 @@ public class PostService {
         postRepo.save(post);
     }
 
+    public Post updatePost(Post postDto, Long id){
+        Post post = postRepo.findById(id).orElse(null);
+        if(post != null){
+            post.setTitle(postDto.getTitle());
+            post.setContent(postDto.getContent());
+            post.setImageName(postDto.getImageName());
+            postRepo.save(post);
+        }
+        return post;
+    }
+
 }

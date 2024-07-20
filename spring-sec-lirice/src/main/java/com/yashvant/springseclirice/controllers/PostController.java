@@ -62,8 +62,8 @@ public class PostController {
 
         String fileName = this.fileService.uploadImage(path, image);
         postDto.setImageName(fileName);
-        PostDto updatePost = this.postService.updatePost(postDto, postId);
-        return new ResponseEntity<PostDto>(updatePost, HttpStatus.OK);
+        Post updatePost = this.postService.updatePost(postDto, postId);
+        return new ResponseEntity<Post>(updatePost, HttpStatus.OK);
 
     }
 
