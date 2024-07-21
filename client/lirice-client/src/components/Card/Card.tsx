@@ -28,7 +28,7 @@ const PostCard: React.FC<CardProps> = ({ title, description, image }) => {
                 <Image
                     isBlurred
                     // width={500}
-                    src={`/${image}`}
+                    src={`/images/${image}`}
                     // src="/myarch.png"
                     alt={`${title}`}
                     className="m-5 w-[50%]"
