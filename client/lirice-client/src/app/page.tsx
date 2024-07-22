@@ -3,7 +3,7 @@
 import { cn } from "@/utils/cn";
 import { useState } from "react";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
-import { Button, Card, NextUIProvider } from "@nextui-org/react";
+import { Button, Card, Chip, NextUIProvider } from "@nextui-org/react";
 import Image from "next/image";
 import Navbar from "@/components/navbar/navbar";
 import CardList from "@/components/Card/CardList";
@@ -44,41 +44,63 @@ export default function Home() {
       .catch(error => console.error("Error fetching data:", error));
   }, []);
 
-  return (
-    <NextUIProvider>
-      <div
-        className="absolute h-[500vh] flex items-center bg-white dark:bg-black justify-center w-full group"
-        onMouseMove={handleMouseMove}
-      >
-        <div className="absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-800 pointer-events-none" />
+    return (
+      <NextUIProvider>
+        <div
+          className="absolute h-[500vh] flex flex-col items-center bg-white dark:bg-black justify-start w-full group"
+          onMouseMove={handleMouseMove}
+        >
+          <div className="absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-800 pointer-events-none" />
+  
+          <motion.div
+            className="pointer-events-none bg-dot-thick-indigo-500 dark:bg-dot-thick-indigo-500 absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
+            style={{
+              WebkitMaskImage: useMotionTemplate`
+                radial-gradient(
+                  200px circle at ${mouseX}px ${mouseY}px,
+                  black 0%,
+                  transparent 100%
+                )
+              `,
+              maskImage: useMotionTemplate`
+                radial-gradient(
+                  200px circle at ${mouseX}px ${mouseY}px,
+                  black 0%,
+                  transparent 100%
+                )
+              `,
+            }}
+          />
+  
+          <Navbar />
+  
+          <div className="flex flex-col items-center justify-center w-full">
+          <div className="flex gap-4 mt-40">
+            <Chip color="warning" variant="solid">Solid</Chip>
+            <Chip color="warning" variant="bordered">Bordered</Chip>
+            <Chip color="warning" variant="light">Light</Chip>
+            <Chip color="warning" variant="flat">Flat</Chip>
+            <Chip color="warning" variant="faded">Faded</Chip>
+            <Chip color="warning" variant="shadow">Shadow</Chip>
+            <Chip color="warning" variant="dot">Dot</Chip>
+            <Chip color="warning" variant="dot">Dot</Chip>
+            <Chip color="warning" variant="shadow">Shadow</Chip>
+            <Chip color="warning" variant="bordered">Bordered</Chip>
 
-        <motion.div
-          className="pointer-events-none bg-dot-thick-indigo-500 dark:bg-dot-thick-indigo-500 absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
-          style={{
-            WebkitMaskImage: useMotionTemplate`
-              radial-gradient(
-                200px circle at ${mouseX}px ${mouseY}px,
-                black 0%,
-                transparent 100%
-              )
-            `,
-            maskImage: useMotionTemplate`
-              radial-gradient(
-                200px circle at ${mouseX}px ${mouseY}px,
-                black 0%,
-                transparent 100%
-              )
-            `,
-          }}
-        />
-
-        <Navbar />
-
-        <BentoGrid />
-
-        <CardList data={data} />
-      </div>
-    </NextUIProvider>
-  );
-}
+          </div>
+          <div className="flex gap-4 mt-10">
+            <Chip color="warning" variant="solid">Solid</Chip>
+            <Chip color="warning" variant="bordered">Bordered</Chip>
+            <Chip color="warning" variant="light">Light</Chip>
+            <Chip color="warning" variant="flat">Flat</Chip>
+            <Chip color="warning" variant="faded">Faded</Chip>
+            <Chip color="warning" variant="shadow">Shadow</Chip>
+            <Chip color="warning" variant="dot">Dot</Chip>
+          </div>
+            </div>
+          <CardList data={data} /> 
+        </div>
+      </NextUIProvider>
+    );
+  }
 
