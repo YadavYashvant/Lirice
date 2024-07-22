@@ -78,22 +78,22 @@ export default function Home() {
           <div className="flex gap-4 mt-40">
             <Chip color="warning" variant="solid" onClick={data}>All</Chip>
             <Chip color="warning" variant="bordered">Category 1</Chip>
-            <Chip color="warning" variant="bordered">Bordered</Chip>
-            <Chip color="warning" variant="bordered">Bordered</Chip>
-            <Chip color="warning" variant="bordered">Bordered</Chip>
-            <Chip color="warning" variant="bordered">Bordered</Chip>
-            <Chip color="warning" variant="bordered">Bordered</Chip>
-            <Chip color="warning" variant="bordered">Bordered</Chip>
+            <Chip color="warning" variant="bordered">Category 2</Chip>
+            <Chip color="warning" variant="bordered">Category 3</Chip>
+            <Chip color="warning" variant="bordered">Category 4</Chip>
+            <Chip color="warning" variant="bordered">Category 5</Chip>
+            <Chip color="warning" variant="bordered">Category 6</Chip>
+            <Chip color="warning" variant="bordered">Category 7</Chip>
 
           </div>
           <div className="flex gap-4 mt-10">
-          <Chip color="warning" variant="bordered">Bordered</Chip>
-            <Chip color="warning" variant="bordered">Bordered</Chip>
-            <Chip color="warning" variant="bordered">Bordered</Chip>
-            <Chip color="warning" variant="bordered">Bordered</Chip>
-            <Chip color="warning" variant="bordered">Bordered</Chip>
-            <Chip color="warning" variant="bordered">Bordered</Chip>
-            <Chip color="warning" variant="dot">Dot</Chip>
+          <Chip color="warning" variant="bordered">Category 8</Chip>
+            <Chip color="warning" variant="bordered">Category 9</Chip>
+            <Chip color="warning" variant="bordered">Category 10</Chip>
+            <Chip color="warning" variant="bordered">Category 11</Chip>
+            <Chip color="warning" variant="bordered">Category 12</Chip>
+            <Chip color="warning" variant="bordered">Category 13</Chip>
+            <Chip color="warning" variant="dot">FOURTEEN</Chip>
           </div>
             </div>
           <CardList data={data} /> 
