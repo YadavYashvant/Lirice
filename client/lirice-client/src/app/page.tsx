@@ -76,25 +76,23 @@ export default function Home() {
   
           <div className="flex flex-col items-center justify-center w-full">
           <div className="flex gap-4 mt-40">
-            <Chip color="warning" variant="solid">Solid</Chip>
+            <Chip color="warning" variant="solid" onClick={data}>All</Chip>
+            <Chip color="warning" variant="bordered">Category 1</Chip>
             <Chip color="warning" variant="bordered">Bordered</Chip>
-            <Chip color="warning" variant="light">Light</Chip>
-            <Chip color="warning" variant="flat">Flat</Chip>
-            <Chip color="warning" variant="faded">Faded</Chip>
-            <Chip color="warning" variant="shadow">Shadow</Chip>
-            <Chip color="warning" variant="dot">Dot</Chip>
-            <Chip color="warning" variant="dot">Dot</Chip>
-            <Chip color="warning" variant="shadow">Shadow</Chip>
+            <Chip color="warning" variant="bordered">Bordered</Chip>
+            <Chip color="warning" variant="bordered">Bordered</Chip>
+            <Chip color="warning" variant="bordered">Bordered</Chip>
+            <Chip color="warning" variant="bordered">Bordered</Chip>
             <Chip color="warning" variant="bordered">Bordered</Chip>
 
           </div>
           <div className="flex gap-4 mt-10">
-            <Chip color="warning" variant="solid">Solid</Chip>
+          <Chip color="warning" variant="bordered">Bordered</Chip>
             <Chip color="warning" variant="bordered">Bordered</Chip>
-            <Chip color="warning" variant="light">Light</Chip>
-            <Chip color="warning" variant="flat">Flat</Chip>
-            <Chip color="warning" variant="faded">Faded</Chip>
-            <Chip color="warning" variant="shadow">Shadow</Chip>
+            <Chip color="warning" variant="bordered">Bordered</Chip>
+            <Chip color="warning" variant="bordered">Bordered</Chip>
+            <Chip color="warning" variant="bordered">Bordered</Chip>
+            <Chip color="warning" variant="bordered">Bordered</Chip>
             <Chip color="warning" variant="dot">Dot</Chip>
           </div>
             </div>
