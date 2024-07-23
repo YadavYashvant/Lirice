@@ -31,7 +31,7 @@ public class CategoryServiceImpl implements CategoryService {
 
 
     public Category getCategory(Integer categoryId) {
-        return this.categoryRepo.getOne(categoryId);
+        return this.categoryRepo.findById(categoryId).get();
     }
 
 
