@@ -23,7 +23,7 @@ public class Post {
 
     private String imageName;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
 
