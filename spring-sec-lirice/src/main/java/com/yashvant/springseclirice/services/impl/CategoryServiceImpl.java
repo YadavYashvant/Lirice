@@ -1,7 +1,10 @@
 package com.yashvant.springseclirice.services.impl;
 
 import com.yashvant.springseclirice.entities.Category;
+import com.yashvant.springseclirice.repositories.CategoryRepo;
 import com.yashvant.springseclirice.services.CategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,13 +12,16 @@ import java.util.List;
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
-    public Category createCategory(Category categoryDto) {
-        return null;
+    @Autowired
+    private CategoryRepo categoryRepo;
+
+    public Category createCategory(Category category) {
+        return this.categoryRepo.save(category);
     }
 
 
-    public Category updateCategory(Category categoryDto, Integer categoryId) {
-        return null;
+    public Category updateCategory(Category category, Integer categoryId) {
+        return this.categoryRepo.save(category);
     }
 
     @Override
@@ -25,11 +31,11 @@ public class CategoryServiceImpl implements CategoryService {
 
 
     public Category getCategory(Integer categoryId) {
-        return null;
+        return this.categoryRepo.getOne(categoryId);
     }
 
 
     public List<Category> getCategories() {
-        return List.of();
+        return this.categoryRepo.findAll();
     }
 }
