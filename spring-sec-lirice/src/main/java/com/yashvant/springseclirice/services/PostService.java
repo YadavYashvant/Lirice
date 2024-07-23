@@ -30,14 +30,14 @@ public class PostService {
     }
 
     public Post updatePost(Post postDto, Long id){
-        Post post = postRepo.findById(id).orElse(null);
-        if(post != null){
-            post.setTitle(postDto.getTitle());
-            post.setContent(postDto.getContent());
-            post.setImageName(postDto.getImageName());
-            postRepo.save(post);
+        Post postI = postRepo.findById(id).orElse(null);
+        if(postI != null){
+            postI.setTitle(postDto.getTitle());
+            postI.setContent(postDto.getContent());
+            postI.setImageName(postDto.getImageName());
+            postRepo.save(postI);
         }
-        return post;
+        return postI;
     }
 
 }
