@@ -21,7 +21,7 @@ import java.util.List;
 
 //@Controller
 @RestController
-@CrossOrigin("*")
+@CrossOrigin("https://lirice.vercel.app")
 public class PostController {
 
     @Autowired
