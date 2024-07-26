@@ -18,7 +18,7 @@ const PostCard: React.FC<CardProps> = ({ title, description, image }) => {
     // }, []);
 
     return (
-        <Card className="py-4 my-10 mx-10 lg:mx-42 lg:my-24">
+        <Card className="py-4 my-10 mx-10 lg:mx-42 lg:my-24 max-sm:mx-5">
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                 <p className="text-tiny uppercase font-bold">{title}</p>
                 {/* <small className="text-default-500">config description</small> */}
