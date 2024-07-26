@@ -30,7 +30,7 @@ export default function Home() {
   const [data, setData] = useState<any>([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/posts")
+    fetch("https://liricebackend.onrender.com/posts")
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -96,7 +96,7 @@ export default function Home() {
             <Chip color="warning" variant="dot">FOURTEEN</Chip>
           </div>
             </div>
-          <CardList data={data} /> 
+          <CardList data={data} />
         </div>
       </NextUIProvider>
     );

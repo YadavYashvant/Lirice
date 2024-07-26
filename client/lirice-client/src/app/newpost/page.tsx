@@ -52,7 +52,7 @@ const NewPost: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
-      const postResponse = await axios.post('http://localhost:8080/post', {
+      const postResponse = await axios.post('https://liricebackend.onrender.com/post', {
         title,
         content,
       });
@@ -70,7 +70,7 @@ const NewPost: React.FC = () => {
         const formData = new FormData();
         formData.append('image', image);
 
-        await axios.post(`http://localhost:8080/post/image/upload/${postId}`, formData, {
+        await axios.post(`https://liricebackend.onrender.com/post/image/upload/${postId}`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
