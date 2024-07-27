@@ -31,4 +31,4 @@ build/
 
 ### VS Code ###
 .vscode/
-spring-sec-lirice/src/main/resources/application.properties
+spring-sec-lirice/src/main/resources/

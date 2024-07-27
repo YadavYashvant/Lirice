@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "assistantforwindows-8497a",
+    "staging": "assistantforwindows-8497a"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
