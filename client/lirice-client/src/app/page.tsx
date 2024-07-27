@@ -78,7 +78,7 @@ export default function Home() {
 
         <Navbar />
 
-        <div className="flex flex-col items-center justify-center w-full">
+        <div className="flex flex-col items-center justify-center w-full max-sm:mx-10">
           <div className="flex flex-wrap gap-4 mt-40 overflow-hidden">
             <Chip color="warning" variant="solid" onClick={data}>All</Chip>
             <Chip color="warning" variant="bordered">Category 1</Chip>
@@ -135,7 +135,7 @@ export default function Home() {
 
         <Navbar />
 
-        <div className="flex flex-col items-center justify-center w-full">
+        <div className="flex flex-col items-center justify-center w-full max-sm:mx-10 max-sm:px-5">
           <div className="flex flex-wrap gap-4 mt-40 overflow-hidden">
             <Chip color="warning" variant="solid" onClick={data}>All</Chip>
             <Chip color="warning" variant="bordered">Category 1</Chip>
