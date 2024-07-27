@@ -21,7 +21,8 @@ import java.util.List;
 
 //@Controller
 @RestController
-@CrossOrigin("https://lirice.vercel.app")
+@CrossOrigin("*")
+//@CrossOrigin("https://lirice.vercel.app")
 public class PostController {
 
     @Autowired
@@ -55,6 +56,18 @@ public class PostController {
     }
 
     @PostMapping("/post/image/upload/{postId}")
+    public ResponseEntity<Post> uploadPostImage(@RequestParam("image") String image,
+                                                @PathVariable Long postId) throws IOException {
+
+        Post postDto = this.postService.getPostById(postId);
+
+//        String fileName = this.fileService.uploadImage(path, image);
+        postDto.setImageName(image);
+        Post updatePost = this.postService.updatePost(postDto, postId);
+        return new ResponseEntity<Post>(updatePost, HttpStatus.OK);
+    }
+
+    /*@PostMapping("/post/image/upload/{postId}")
     public ResponseEntity<Post> uploadPostImage(@RequestParam("image") MultipartFile image,
                                                    @PathVariable Long postId) throws IOException {
 
@@ -65,7 +78,7 @@ public class PostController {
         Post updatePost = this.postService.updatePost(postDto, postId);
         return new ResponseEntity<Post>(updatePost, HttpStatus.OK);
 
-    }
+    }*/
 
 
     //method to serve files

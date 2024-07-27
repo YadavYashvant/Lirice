@@ -5,6 +5,7 @@ import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import { Chip, NextUIProvider } from "@nextui-org/react";
 import Navbar from "@/components/navbar/navbar";
 import CardList from "@/components/Card/CardList";
+import { BASE_URL } from "@/utils/baseurl";
 
 export default function Home() {
   const mouseX = useMotionValue(0);
@@ -12,17 +13,37 @@ export default function Home() {
   const [data, setData] = useState<any>([]);
 
   useEffect(() => {
-    fetch("https://liricebackend.onrender.com/posts")
-      .then(response => response.json())
-      .then(data => {
-        const formattedData = data.map((item: any) => ({
-          title: item.title,
-          description: item.content,
-          image: item.imageName,
-        }));
-        setData(formattedData);
-      })
-      .catch(error => console.error("Error fetching data:", error));
+    const storedData = localStorage.getItem("postsData");
+    if (storedData) {
+      // setData(JSON.parse(storedData));
+
+      fetch(`${BASE_URL}/posts`)
+        .then(response => response.json())
+        .then(data => {
+          const formattedData = data.map((item: any) => ({
+            title: item.title,
+            description: item.content,
+            image: item.imageName,
+          }));
+          setData(formattedData);
+          localStorage.setItem("postsData", JSON.stringify(formattedData));
+        })
+        .catch(error => console.error("Error fetching data:", error));
+
+    } else {
+      fetch(`${BASE_URL}/posts`)
+        .then(response => response.json())
+        .then(data => {
+          const formattedData = data.map((item: any) => ({
+            title: item.title,
+            description: item.content,
+            image: item.imageName,
+          }));
+          setData(formattedData);
+          localStorage.setItem("postsData", JSON.stringify(formattedData));
+        })
+        .catch(error => console.error("Error fetching data:", error));
+    }
   }, []);
 
   function handleMouseMove({
@@ -35,6 +56,8 @@ export default function Home() {
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   }
+
+  console.log(data);
 
   return (
     <NextUIProvider>
@@ -66,7 +89,7 @@ export default function Home() {
 
         <Navbar />
 
-        <div className="flex flex-col items-center justify-center w-full max-sm:p-5">
+        <div className="flex flex-col items-center justify-center w-full">
           <div className="flex flex-wrap gap-4 mt-40 overflow-hidden">
             <Chip color="warning" variant="solid" onClick={data}>All</Chip>
             <Chip color="warning" variant="bordered">Category 1</Chip>
