@@ -49,29 +49,38 @@ const NewPost: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
-      let imageUrl = '';
-
-      if (image) {
-        const storageRef = ref(storage, `images/${image.name}`);
-        await uploadBytes(storageRef, image);
-        imageUrl = await getDownloadURL(storageRef);
-      }
-
       const postResponse = await axios.post(`${BASE_URL}/post`, {
         title,
         content,
-        image: imageUrl, // Send the Firebase image URL to the backend
       });
-
-      console.log('Post response:', postResponse);
-
+  
+      // console.log('Post response:', postResponse);
+  
       const postId = postResponse.data.id;
       if (!postId) {
         throw new Error('Post ID is undefined');
       }
-
+  
       console.log('Post created with ID:', postId);
-
+  
+      if (image) {
+        const storageRef = ref(storage, `images/${image.name}`);
+        await uploadBytes(storageRef, image);
+        const imageUrl = await getDownloadURL(storageRef);
+        console.log('Image uploaded to Firebase:', imageUrl);
+      
+        const formData = new FormData();
+        formData.append('image', imageUrl);
+      
+        await axios.post(`${BASE_URL}/post/image/upload/${postId}`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+      
+        console.log('Image uploaded and linked to post');
+      }
+  
       setTitle('');
       setContent('');
       setImage(null);

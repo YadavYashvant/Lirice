@@ -12,7 +12,25 @@ export default function Home() {
   const mouseY = useMotionValue(0);
   const [data, setData] = useState<any>([]);
 
+  
+
   useEffect(() => {
+
+    fetch(`${BASE_URL}/posts`)
+      .then(response => response.json())
+      .then(data => {
+        const formattedData = data.map((item: any) => ({
+          title: item.title,
+          description: item.content,
+          image: item.imageName,
+        }));
+        setData(formattedData);
+      })
+      .catch(error => console.error("Error fetching data:", error));
+
+      console.log("data that we are getting after /posts get request: ",data);
+
+    /*
     const storedData = localStorage.getItem("postsData");
     if (storedData) {
       // setData(JSON.parse(storedData));
@@ -27,6 +45,7 @@ export default function Home() {
           }));
           setData(formattedData);
           localStorage.setItem("postsData", JSON.stringify(formattedData));
+          console.log("",formattedData);
         })
         .catch(error => console.error("Error fetching data:", error));
 
@@ -44,6 +63,7 @@ export default function Home() {
         })
         .catch(error => console.error("Error fetching data:", error));
     }
+        */
   }, []);
 
   function handleMouseMove({
