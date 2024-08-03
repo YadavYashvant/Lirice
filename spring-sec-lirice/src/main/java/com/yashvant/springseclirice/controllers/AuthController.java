@@ -8,10 +8,14 @@ import java.util.stream.Collectors;
 import com.yashvant.springseclirice.entities.ERole;
 import com.yashvant.springseclirice.entities.Role;
 import com.yashvant.springseclirice.entities.User;
+import com.yashvant.springseclirice.payload.request.LoginRequest;
+import com.yashvant.springseclirice.payload.request.SignupRequest;
 import com.yashvant.springseclirice.payload.response.JwtResponse;
 import com.yashvant.springseclirice.payload.response.MessageResponse;
 import com.yashvant.springseclirice.repositories.RoleRepository;
 import com.yashvant.springseclirice.repositories.UserRepository;
+import com.yashvant.springseclirice.security.jwt.JwtUtils;
+import com.yashvant.springseclirice.security.services.UserDetailsImpl;
 import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +31,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bezkoder.springjwt.security.jwt.JwtUtils;
-import com.bezkoder.springjwt.security.services.UserDetailsImpl;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -58,7 +60,7 @@ public class AuthController {
     SecurityContextHolder.getContext().setAuthentication(authentication);
     String jwt = jwtUtils.generateJwtToken(authentication);
     
-    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();    
+    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
     List<String> roles = userDetails.getAuthorities().stream()
         .map(item -> item.getAuthority())
         .collect(Collectors.toList());
