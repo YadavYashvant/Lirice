@@ -21,6 +21,8 @@ public class LiriceApplication implements CommandLineRunner {
     @Autowired
     private UserRepo userRepo;
 
+    @Auto
+
     public static void main(String[] args) {
         SpringApplication.run(LiriceApplication.class, args);
     }
