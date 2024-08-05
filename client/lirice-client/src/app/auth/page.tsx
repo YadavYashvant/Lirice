@@ -1,23 +1,23 @@
-import { Button, Card, Container, Divider, Input, Text, useToasts } from '@nextui-org/react';
+'use client';
+import { Button, Card,Divider, Input} from '@nextui-org/react';
 import { useState } from 'react';
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [, setToast] = useToasts();
 
     const handleLogin = () => {
-        setToast({ text: 'Logging in...', type: 'info' });
+        // setToast({ text: 'Logging in...', type: 'info' });
     };
 
     const handleSignup = () => {
-        setToast({ text: 'Signing up...', type: 'info' });
+        // setToast({ text: 'Signing up...', type: 'info' });
     };
 
     return (
-        <Container center>
-            <Card shadow>
-                <Text h1>Login</Text>
+        <div>
+            <Card>
+                <h1>Login</h1>
                 <Divider />
                 <Input
                     label="Email"
@@ -39,7 +39,7 @@ const LoginPage = () => {
                     Sign Up
                 </Button>
             </Card>
-        </Container>
+        </div>
     );
 };
 
