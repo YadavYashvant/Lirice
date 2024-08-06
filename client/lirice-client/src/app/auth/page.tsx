@@ -8,11 +8,10 @@ const LoginPage = () => {
 
     const handleLogin = () => {
         console.log('Logging in...')
-        // setToast({ text: 'Logging in...', type: 'info' });
     };
 
     const handleSignup = () => {
-        // setToast({ text: 'Signing up...', type: 'info' });
+        console.log('Signing up...')
     };
 
     return (
