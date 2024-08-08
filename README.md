@@ -1,5 +1,4 @@
-# Lirice![lirice_readme](https://github.com/user-attachments/assets/e613df5f-882d-4a4b-8968-86a03e1737c3)
-ce
+![lirice_readme](https://github.com/user-attachments/assets/e613df5f-882d-4a4b-8968-86a03e1737c3)
 ## (UNDER DEVELOPEMENT) 
 A linux ricing config platform using springboot and nextjs.
 
