@@ -7,3 +7,4 @@ A linux ricing config platform using springboot and nextjs.
 - [x] User can view all the ricing configs
 - [x] User can view a specific ricing config
 - [ ] User can delete a specific ricing config
+- [ ] Anyone can comment on a config
