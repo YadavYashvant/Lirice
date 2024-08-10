@@ -1,5 +1,5 @@
 'use client';
-import { Button, Card,Divider, Input} from '@nextui-org/react';
+import {Button, Card, Divider, Input, Spacer} from '@nextui-org/react';
 import { useState } from 'react';
 
 const LoginPage = () => {
@@ -15,16 +15,18 @@ const LoginPage = () => {
     };
 
     return (
-        <div>
-            <Card>
-                <h1>Login</h1>
+        <div className='mx-20 my-10'>
+            <Card className='p-12'>
+                <h1 className='text-5xl text-center font-extrabold my-5'>Login or SignUp</h1>
                 <Divider />
+                <Spacer y={5} />
                 <Input
                     label="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
                 />
+                <Spacer y={5} />
                 <Input
                     label="Password"
                     type="password"
@@ -32,10 +34,16 @@ const LoginPage = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your password"
                 />
+                <Spacer y={8} />
                 <Button onClick={handleLogin} color="primary" fullWidth>
                     Sign In
                 </Button>
-                <Button onClick={handleSignup} color="secondary" fullWidth>
+                <Spacer y={5} />
+
+                <Button
+                    onClick={handleSignup} color="success" fullWidth
+
+                >
                     Sign Up
                 </Button>
             </Card>
