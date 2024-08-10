@@ -35,17 +35,20 @@ const LoginPage = () => {
                     placeholder="Enter your password"
                 />
                 <Spacer y={8} />
-                <Button onClick={handleLogin} color="primary" fullWidth>
+                <Button onClick={handleLogin} color="primary" fullWidth className='p-8 font-bold text-2xl'>
                     Sign In
                 </Button>
+                <Spacer y={5} />
+                <h1 className='text-2xl text-center font-extrabold my-5'>OR</h1>
                 <Spacer y={5} />
 
                 <Button
                     onClick={handleSignup} color="success" fullWidth
-
+                    className='p-8 font-bold text-2xl'
                 >
                     Sign Up
                 </Button>
+
             </Card>
         </div>
     );
