@@ -15,7 +15,7 @@ const LoginPage = () => {
     };
 
     return (
-        <div className='mx-20 my-10'>
+        <div className='mx-20 my-10 max-sm:mx-8'>
             <Card className='p-12'>
                 <h1 className='text-5xl text-center font-extrabold my-5'>Login or SignUp</h1>
                 <Divider />
