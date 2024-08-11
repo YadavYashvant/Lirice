@@ -2,7 +2,7 @@
 'use client';
 import { useState, useEffect } from "react";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
-import { Chip, NextUIProvider } from "@nextui-org/react";
+import {Button, Chip, NextUIProvider} from "@nextui-org/react";
 import Navbar from "@/components/navbar/navbar";
 import CardList from "@/components/Card/CardList";
 import { BASE_URL } from "@/utils/baseurl";
@@ -79,6 +79,9 @@ export default function Home() {
         <Navbar />
 
         <div className="flex flex-col items-center justify-center w-full max-sm:mx-10">
+          <Button radius="full" href='/auth'>
+            <span className="text-lg font-bold">SignIn or SignUp</span>
+          </Button>
           <div className="flex flex-wrap gap-4 mt-40 overflow-hidden">
             <Chip color="warning" variant="solid" onClick={data}>All</Chip>
             <Chip color="warning" variant="bordered">Category 1</Chip>
