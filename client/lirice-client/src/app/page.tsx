@@ -79,9 +79,13 @@ export default function Home() {
         <Navbar />
 
         <div className="flex flex-col items-center justify-center w-full max-sm:mx-10">
-          <Button radius="full" href='/auth'>
-            <span className="text-lg font-bold">SignIn or SignUp</span>
-          </Button>
+
+          <div className="flex flex-wrap gap-4 mt-40 overflow-hidden">
+            <Button radius="full">
+              <a href='/auth' className="text-lg font-bold">SignIn or SignUp</a>
+            </Button>
+          </div>
+
           <div className="flex flex-wrap gap-4 mt-40 overflow-hidden">
             <Chip color="warning" variant="solid" onClick={data}>All</Chip>
             <Chip color="warning" variant="bordered">Category 1</Chip>
