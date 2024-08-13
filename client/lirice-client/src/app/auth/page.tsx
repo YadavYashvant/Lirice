@@ -64,17 +64,13 @@ const LoginPage = () => {
                 <ModalContent>
                     {(onClose) => (
                         <>
-                            <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
+                            <ModalHeader className="flex flex-col gap-1">IMPORTANT INFORMATION!!</ModalHeader>
                             <ModalBody>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Nullam pulvinar risus non risus hendrerit venenatis.
-                                    Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                                    Sign up or Login to access the full features of this app.
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Nullam pulvinar risus non risus hendrerit venenatis.
-                                    Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                                    These features are yet to be implemented.
                                 </p>
                             </ModalBody>
                             <ModalFooter>
@@ -82,7 +78,7 @@ const LoginPage = () => {
                                     Close
                                 </Button>
                                 <Button color="primary" onPress={onClose}>
-                                    Action
+                                    Proceed 👨‍🚀
                                 </Button>
                             </ModalFooter>
                         </>
