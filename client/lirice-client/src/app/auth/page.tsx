@@ -1,8 +1,13 @@
 'use client';
-import {Button, Card, Divider, Input, Spacer} from '@nextui-org/react';
+import React from "react";
 import { useState } from 'react';
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure, RadioGroup, Radio, Button, Card, Divider, Input, Spacer} from "@nextui-org/react";
 
 const LoginPage = () => {
+
+    const {isOpen, onOpen, onOpenChange} = useDisclosure();
+    const [modalPlacement, setModalPlacement] = React.useState("auto");
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -35,7 +40,7 @@ const LoginPage = () => {
                     placeholder="Enter your password"
                 />
                 <Spacer y={8} />
-                <Button onClick={handleLogin} color="primary" fullWidth className='p-8 font-bold text-2xl'>
+                <Button onClick={onOpen} color="primary" fullWidth className='p-8 font-bold text-2xl'>
                     Sign In
                 </Button>
                 <Spacer y={5} />
@@ -43,13 +48,48 @@ const LoginPage = () => {
                 <Spacer y={5} />
 
                 <Button
-                    onClick={handleSignup} color="success" fullWidth
+                    onClick={onOpen} color="success" fullWidth
                     className='p-8 font-bold text-2xl'
                 >
                     Sign Up
                 </Button>
 
             </Card>
+
+            <Modal
+                isOpen={isOpen}
+                placement="bottom"
+                onOpenChange={onOpenChange}
+            >
+                <ModalContent>
+                    {(onClose) => (
+                        <>
+                            <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
+                            <ModalBody>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Nullam pulvinar risus non risus hendrerit venenatis.
+                                    Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Nullam pulvinar risus non risus hendrerit venenatis.
+                                    Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                                </p>
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button color="danger" variant="light" onPress={onClose}>
+                                    Close
+                                </Button>
+                                <Button color="primary" onPress={onClose}>
+                                    Action
+                                </Button>
+                            </ModalFooter>
+                        </>
+                    )}
+                </ModalContent>
+            </Modal>
+
         </div>
     );
 };
