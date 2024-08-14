@@ -58,6 +58,7 @@ const LoginPage = () => {
 
             <Modal
                 isOpen={isOpen}
+                backdrop="blur"
                 placement="bottom"
                 onOpenChange={onOpenChange}
             >
