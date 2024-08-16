@@ -5,7 +5,7 @@ import { useState } from 'react';
 const LandingPage = () => {
     return (
         <div>
-            <h1>Landing Page</h1>
+            <h1 className='text-7xl text-center'>Welcome to Lirice</h1>
         </div>
     );
 }
