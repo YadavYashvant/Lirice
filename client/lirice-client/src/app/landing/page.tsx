@@ -6,12 +6,12 @@ import { useState } from 'react';
 const LandingPage = () => {
     return (
         <div>
-            <h1 className='text-7xl text-center'>Welcome to Lirice</h1>
+            <h1 className='text-9xl text-center font-extrabold'>Welcome to Lirice</h1>
 
             <Image
                 isBlurred
-                className='w-full'
-                src="https://nextui-docs-v2.vercel.app/images/album-cover.png"
+                className='w-[95%] m-10'
+                src="https://images.unsplash.com/photo-1600354279787-0a726615ef44"
                 alt="NextUI Album Cover"
                 // className="m-5"
             />
