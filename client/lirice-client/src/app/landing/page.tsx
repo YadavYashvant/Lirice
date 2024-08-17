@@ -10,9 +10,9 @@ const LandingPage = () => {
 
             <Image
                 isBlurred
-                className='w-[95%] m-10'
+                className='w-[95%] m-10 overflow-x-hidden'
                 src="https://images.unsplash.com/photo-1600354279787-0a726615ef44"
-                alt="NextUI Album Cover"
+                alt="Lirice landing page image"
                 // className="m-5"
             />
 
