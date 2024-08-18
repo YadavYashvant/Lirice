@@ -13,7 +13,6 @@ const LandingPage = () => {
                 className='w-[95%] m-10 overflow-x-hidden'
                 src="https://images.unsplash.com/photo-1600354279787-0a726615ef44"
                 alt="Lirice landing page image"
-                // className="m-5"
             />
 
         </div>
