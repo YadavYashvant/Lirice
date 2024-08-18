@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const LandingPage = () => {
     return (
-        <div>
+        <div className='overflow-x-hidden'>
             <h1 className='text-9xl text-center font-extrabold'>Welcome to Lirice</h1>
 
             <Image
