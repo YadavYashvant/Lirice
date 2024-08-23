@@ -1,6 +1,6 @@
 'use client';
 import React from "react";
-import {Image, Card} from "@nextui-org/react";
+import {Image, Card, Input} from "@nextui-org/react";
 import { useState } from 'react';
 
 const LandingPage = () => {
@@ -21,7 +21,11 @@ const LandingPage = () => {
             />
 
             <Card className='absolute bottom-0 left-0 right-0 z-10 p-10'>
-
+                <h1 className='text-5xl text-center font-extrabold my-5'>Get an early access</h1>
+                <Input
+                    label="Email"
+                    placeholder="Enter your email"
+                />
             </Card>
 
         </div>
