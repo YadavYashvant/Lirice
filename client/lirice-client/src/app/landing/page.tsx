@@ -1,6 +1,6 @@
 'use client';
 import React from "react";
-import {Image} from "@nextui-org/react";
+import {Image, Card} from "@nextui-org/react";
 import { useState } from 'react';
 
 const LandingPage = () => {
@@ -19,6 +19,11 @@ const LandingPage = () => {
                 src="https://images.unsplash.com/photo-1600354279787-0a726615ef44"
                 alt="Lirice landing page image"
             />
+
+            <Card className='absolute bottom-0 left-0 right-0 z-10 p-10'>
+
+            </Card>
+
         </div>
     );
 }
