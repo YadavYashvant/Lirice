@@ -13,21 +13,21 @@ const LandingPage = () => {
                     Share linux desktop configs in one place 🖥️
                 </div>
             </div>
-            <Image
-                isBlurred
-                className='w-[95%] m-10 overflow-x-hidden z-0'
-                src="https://images.unsplash.com/photo-1600354279787-0a726615ef44"
-                alt="Lirice landing page image"
-            />
-
-            <Card className='absolute bottom-0 left-0 right-0 z-10 p-10'>
-                <h1 className='text-5xl text-center font-extrabold my-5'>Get an early access</h1>
-                <Input
-                    label="Email"
-                    placeholder="Enter your email"
+            <div className='flex items-center justify-center w-full h-full'>
+                <Image
+                    isBlurred
+                    className='w-1/2 m-10 overflow-x-hidden z-0'
+                    src="https://images.unsplash.com/photo-1600354279787-0a726615ef44"
+                    alt="Lirice landing page image"
                 />
-            </Card>
-
+                <Card className='w-1/2 p-10 z-10'>
+                    <h1 className='text-5xl text-center font-extrabold my-5'>Get an early access</h1>
+                    <Input
+                        label="Email"
+                        placeholder="Enter your email"
+                    />
+                </Card>
+            </div>
         </div>
     );
 }
