@@ -65,7 +65,7 @@ const NewPost: React.FC = () => {
 
       const postId = postResponse.data.id;
       if (!postId) {
-        throw new Error('Post ID is undefined');
+        throw new Error('Post ID is undefined, please define post ID!');
       }
 
       console.log('Post created with ID:', postId);
