@@ -1,6 +1,6 @@
 'use client';
 import React from "react";
-import {Image, Card, Input} from "@nextui-org/react";
+import {Image, Card, Input, Button} from "@nextui-org/react";
 import { useState } from 'react';
 
 const LandingPage = () => {
@@ -21,12 +21,15 @@ const LandingPage = () => {
                     </div>
                 </div>
                 <div className='flex items-center justify-center w-full h-full'>
-                <Card className='w-1/2 p-10 z-50'>
+                <Card className='w-full p-10 z-50'>
                     <h1 className='text-5xl text-center font-extrabold my-5'>Get an early access</h1>
                     <Input
                         label="Email"
                         placeholder="Enter your email"
                     />
+                    <Button variant='bordered' color="success" className="mt-10">
+                        Request Accesss
+                    </Button>
                 </Card>
             </div>
             </div>
