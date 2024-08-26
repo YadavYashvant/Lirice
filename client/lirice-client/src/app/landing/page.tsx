@@ -20,15 +20,15 @@ const LandingPage = () => {
                         Share linux desktop configs in one place 🖥️
                     </div>
                 </div>
-            </div>
-            <div className='flex items-center justify-center w-full h-full'>
-                <Card className='w-1/2 p-10 z-10'>
+                <div className='flex items-center justify-center w-full h-full'>
+                <Card className='w-1/2 p-10 z-50'>
                     <h1 className='text-5xl text-center font-extrabold my-5'>Get an early access</h1>
                     <Input
                         label="Email"
                         placeholder="Enter your email"
                     />
                 </Card>
+            </div>
             </div>
         </div>
     );
