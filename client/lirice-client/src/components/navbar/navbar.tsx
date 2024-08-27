@@ -18,24 +18,24 @@ export default function Navbar({ className }: { className?: string }) {
           <MenuItem setActive={setActive} active={active} item=" 📋 Leaderboard">
             <div className="text-sm grid grid-cols-2 gap-10 p-4">
               <ProductItem
-                title="Algochurn"
-                href="https://algochurn.com"
-                description="Prepare for tech interviews like never before."
+                title="Github"
+                href="htttps://github.com/YadavYashvant/Lirice"
+                description="Visit our Github repository"
               />
               <ProductItem
-                title="Tailwind Master Kit"
-                href="https://tailwindmasterkit.com"
-                description="Production ready Tailwind css components for your next project"
+                title="Render"
+                href="https://render.com"
+                description="visit our hosting provider"
               />
               <ProductItem
-                title="Moonbeam"
-                href="https://gomoonbeam.com"
-                description="Never write from scratch again. Go from idea to blog in minutes."
+                title="Reddit"
+                href="https://reddit.com"
+                description="Go for communities such as r/hyprland, r/unixporn etc"
               />
               <ProductItem
-                title="Rogue"
-                href="https://userogue.com"
-                description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+                title="See leaderboard"
+                href="https://lirice.vercel.app/leaderboard"
+                description="See the leaderboard of the top contributors"
               />
             </div>
           </MenuItem>
