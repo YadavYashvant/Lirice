@@ -80,23 +80,23 @@ export default function Home() {
 
         <div className="flex flex-col items-center justify-center w-full max-sm:mx-10 max-sm:px-5">
           <div className="flex flex-wrap gap-4 mt-40 overflow-hidden">
-            <Chip color="warning" variant="solid" onClick={data}>All</Chip>
-            <Chip color="warning" variant="bordered">Category 1</Chip>
-            <Chip color="warning" variant="bordered">Category 2</Chip>
-            <Chip color="warning" variant="bordered">Category 3</Chip>
-            <Chip color="warning" variant="bordered">Category 4</Chip>
-            <Chip color="warning" variant="bordered">Category 5</Chip>
-            <Chip color="warning" variant="bordered">Category 6</Chip>
-            <Chip color="warning" variant="bordered">Category 7</Chip>
+            <Chip color="warning" variant="solid" onClick={data} className=" cursor-pointer">All</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 1</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 2</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 3</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 4</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 5</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 6</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 7</Chip>
           </div>
           <div className="flex flex-wrap gap-4 mt-10">
-            <Chip color="warning" variant="bordered">Category 8</Chip>
-            <Chip color="warning" variant="bordered">Category 9</Chip>
-            <Chip color="warning" variant="bordered">Category 10</Chip>
-            <Chip color="warning" variant="bordered">Category 11</Chip>
-            <Chip color="warning" variant="bordered">Category 12</Chip>
-            <Chip color="warning" variant="bordered">Category 13</Chip>
-            <Chip color="warning" variant="dot">FOURTEEN</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 8</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 9</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 10</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 11</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 12</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 13</Chip>
+            <Chip color="warning" variant="dot" className=" cursor-pointer">FOURTEEN</Chip>
           </div>
         </div>
         <Loader />
@@ -136,24 +136,24 @@ export default function Home() {
         <Navbar />
 
         <div className="flex flex-col items-center justify-center w-full max-sm:mx-10 max-sm:px-5">
-          <div className="flex flex-wrap gap-4 mt-40 overflow-hidden">
-            <Chip color="warning" variant="solid" onClick={data}>All</Chip>
-            <Chip color="warning" variant="bordered">Category 1</Chip>
-            <Chip color="warning" variant="bordered">Category 2</Chip>
-            <Chip color="warning" variant="bordered">Category 3</Chip>
-            <Chip color="warning" variant="bordered">Category 4</Chip>
-            <Chip color="warning" variant="bordered">Category 5</Chip>
-            <Chip color="warning" variant="bordered">Category 6</Chip>
-            <Chip color="warning" variant="bordered">Category 7</Chip>
+        <div className="flex flex-wrap gap-4 mt-40 overflow-hidden">
+            <Chip color="warning" variant="solid" onClick={data} className=" cursor-pointer">All</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 1</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 2</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 3</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 4</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 5</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 6</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 7</Chip>
           </div>
           <div className="flex flex-wrap gap-4 mt-10">
-            <Chip color="warning" variant="bordered">Category 8</Chip>
-            <Chip color="warning" variant="bordered">Category 9</Chip>
-            <Chip color="warning" variant="bordered">Category 10</Chip>
-            <Chip color="warning" variant="bordered">Category 11</Chip>
-            <Chip color="warning" variant="bordered">Category 12</Chip>
-            <Chip color="warning" variant="bordered">Category 13</Chip>
-            <Chip color="warning" variant="dot">FOURTEEN</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 8</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 9</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 10</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 11</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 12</Chip>
+            <Chip color="warning" variant="bordered" className=" cursor-pointer">Category 13</Chip>
+            <Chip color="warning" variant="dot" className=" cursor-pointer">FOURTEEN</Chip>
           </div>
         </div>
         <CardList data={data} />
