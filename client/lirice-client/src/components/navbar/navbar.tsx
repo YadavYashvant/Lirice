@@ -4,6 +4,7 @@ import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/navbar/na
 import { cn } from "@/utils/cn";
 import { Button } from "@nextui-org/react";
 import { useRouter } from 'next/navigation'
+import { BASE_URL } from "@/utils/baseurl";
 
 export default function Navbar({ className }: { className?: string }) {
     const [active, setActive] = useState<string | null>(null);
@@ -34,7 +35,7 @@ export default function Navbar({ className }: { className?: string }) {
               />
               <ProductItem
                 title="See leaderboard"
-                href="https://lirice.vercel.app/leaderboard"
+                href={`${BASE_URL}/leaderboard`}
                 description="See the leaderboard of the top contributors"
               />
             </div>
