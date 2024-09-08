@@ -11,7 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/categories")
-@CrossOrigin("https://lirice.vercel.app")
+@CrossOrigin("*")
+//@CrossOrigin("https://lirice.vercel.app")
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
